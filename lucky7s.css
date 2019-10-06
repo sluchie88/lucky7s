@@ -1,0 +1,52 @@
+h1 {
+	text-align: center;
+	color: #f0ead6;
+}
+
+#jumbo{
+	background-color:#790604;
+}
+
+body {
+	background-color: #f0ead6;
+	color: #790604;
+	text-align: center;
+}
+
+.dollarInput {
+	border: 1px inset #ccc;
+	background-color: white;
+}
+
+.dollarinput input{
+	border: 0;
+}
+
+.no-border{
+	border: 0;
+}
+
+#playButton, #playAgainButton {
+	background-color: #790604;
+	color: #f0ead6;
+	border: thin solid #790604;
+}
+
+#lucky7s {
+	text-align: center;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	text-align: right;
+}
+
+th {
+	font-size: 2em;
+}
+
+#results {
+	color: #790604;
+}
