@@ -1,11 +1,7 @@
 /*Created on 10/6/2019 by Thomas Sluciak
+
 v1.5.0 - rollDice and playLucky7s are working correctly.
-			Current issues:
-				Page does not display Play Again button or results
-				Page is out of alignment and looks funky, specifically:
-					There is no space between label and input field.
-					Buttons are not appearing in alignment
-					Page goes off screen on XS
+			
 					
 v1.0.0 - Initial creation. Planned functions and mapped out overall structure of file
 
@@ -84,9 +80,9 @@ function playLucky7s(){
 			}
 		}
 	}
-	document.getElementById("starting").innerText = startingBetOriginal;
+	document.getElementById("starting").innerText = startingBetOriginal + ".00";
 	document.getElementById("totalRolls").innerText = rollCount;
-	document.getElementById("highestAmountWon").innerText = highestAmountWon;
+	document.getElementById("highestAmountWon").innerText = highestAmountWon + ".00";
 	document.getElementById("highestAmountWonRollCount").innerText = highestAmountWonRollCount;
 	displayElements();
 	return false;

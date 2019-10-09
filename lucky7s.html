@@ -1,15 +1,25 @@
 <!--
 Created on 10/6/2019 by Thomas Sluciak
+1.1.0 - 10/9 Fixed alignment issues by adding div classes around input and label.
+			Extra area showing up on Starting Bet element in table but not others. Tried adding an extra column to
+				<th>, and even an empty span, but didn't fix anything. Not sure what's going on there.
+				
 1.0.1 - Fixed issue with playLucky7s() being called twice (issue was two onlick commands in the buttons)
 			(fixed) Starting bet value is not appearing in results table, all others are. 
 					Not a logic or code issue as far as I can tell - changed td tag id to starting and that fixed it. Coding is wonderful, right? 
 			Still some big formatting issues with the input fields and buttons on the website itself
+			Current issues:
+				Page does not display Play Again button or results
+				Page is out of alignment and looks funky, specifically:
+					There is no space between label and input field.
+					Buttons are not appearing in alignment
+					Page goes off screen on XS
 1.0.0 Built general structure of website. Added form. Styled. 
 -->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Luck is fickle</title>
+	<title>Lucky 7s</title>
 	
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,25 +69,34 @@ Created on 10/6/2019 by Thomas Sluciak
 
 
 <body>
-	<div class="container col-xs-3 offset-4">
-		<form name="lucky7s" id="lucky7s" onsubmit="return playLucky7s()"
-			onreset="displayElements()" class="form-inline block">
-			<div class="form-group">
+<div class="container" name="inputField">
+	<form name="lucky7s" id="lucky7s" onsubmit="return playLucky7s()"
+			onreset="displayElements()">
+		<div class="form-group row clear-float">
 				
-				<label for="startingBet">Starting Bet: </label>			
-				<input type="number" class="form-control no-border" id="startingBet"
+				<label for="startingBet" class="col-xs-6 offset-4 col-form-label col-form-label">Starting Bet: </label>
+			<div class="col-xs-1 clear-float">
+				<input type="number" class="form-control col-xs-2" id="startingBet"
 					min="1.00" step="1.00" max="5000.00" placeholder="$0.00">
-					
-			</div>
+			</div>	
+	</div>
+</div>
+	<div class="form-group row">
+		<div class="btn-group clear-float">
 			<button type="submit" id="playButton" class="btn btn-default">Let's Play!</button>
             <!-- Need to make this appear AFTER playing a game. Once clicked should disapper -->
 			<button type="reset" id="playAgainButton" class="btn" style="display:none">Play Again!</button>
 		</form>
+		</div>
+	</div>
+</div>
 	<br />
-			
+	
+	<hr />
 		
-		<hr />
-		<br />
+	<br />
+<div class="container">
+	<div class="col-xs-4 offset-3">
 		<table id="results" class="table table-striped" style="display:none">
 			<thead>
 				<tr>
@@ -104,5 +123,6 @@ Created on 10/6/2019 by Thomas Sluciak
 			</tbody>
 		</table>
 	</div>
+</div>
 </body>
 </html>
